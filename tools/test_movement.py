@@ -83,8 +83,6 @@ def main():
             data = bytes(raw)
             if len(data) != 19 or data[2:5] != car or data[5:8] != controller:
                 continue
-            if reduce(xor, data, 0xE9) != 0:
-                continue
             if data not in seen_responses:
                 seen_responses.add(data)
                 emit({"event": "car_response", "payload": data.hex(" ")})

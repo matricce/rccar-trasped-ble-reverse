@@ -247,8 +247,11 @@ class Controller:
                     b[18] = reduce(xor, b[:18], 0xE9)
                     responses.append(bytes(b))
                 for b in responses:
+                    # Checksum is NOT verified on responses: the official app only checks
+                    # length/type/opcode plus the echo of our per-search random identity
+                    # (calDataIsTrue). One observed car answers with a different checksum.
                     if (len(b) == 19 and b[:2] == b'\x04\x0a' and b[5:8] == self.identity
-                            and reduce(xor, b, 0xE9) == 0 and (self.target is None or b[2:5] == self.target)):
+                            and (self.target is None or b[2:5] == self.target)):
                         car = b[2:5]
                         if car not in self.candidates:
                             self.candidates.add(car)

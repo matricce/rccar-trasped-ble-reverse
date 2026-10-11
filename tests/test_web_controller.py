@@ -54,11 +54,12 @@ class ControlTests(unittest.TestCase):
         c.action('connect','client-one',1);c.tick()
         return c,r
 
-    def reply(self, c, car):
+    def reply(self, c, car, checksum=None):
         b=bytearray(19)
         b[:2]=b'\x04\x0a';b[2:5]=car;b[5:8]=c.identity
-        checksum=0xe9
-        for value in b[:18]:checksum^=value
+        if checksum is None:
+            checksum=0xe9
+            for value in b[:18]:checksum^=value
         b[18]=checksum
         return bytes(b)
 
@@ -89,9 +90,19 @@ class ControlTests(unittest.TestCase):
         c,r=self.discovery()
         good=self.reply(c,CAR)
         stale=Controller(Radio());stale.identity=b'old'
-        r.replies=[self.reply(stale,CAR),good[:-1]+bytes([good[-1]^1]),good[:-1],b'\x04\x07'+good[2:]]
+        # Stale identity, truncated length, and wrong opcode (0x07 instead of 0x0A) must be rejected
+        r.replies=[self.reply(stale,CAR),good[:-1],b'\x04\x07'+good[2:]]
         self.finish_discovery(c)
         self.assertEqual(c.state,'pairing');self.assertFalse(c.candidates)
+
+    def test_discovery_accepts_responses_with_different_checksum(self):
+        # As observed live with car AE 96 C4 and confirmed in calDataIsTrue disassembly:
+        # car responses are validated by identity echo and opcode, not checksum.
+        c,r=self.discovery()
+        other_checksum_reply=self.reply(c,CAR,checksum=0x35)
+        r.replies=[other_checksum_reply]
+        self.finish_discovery(c)
+        self.assertEqual(c.state,'ready');self.assertEqual(c.car,CAR)
 
     def test_optional_filter_is_still_respected(self):
         c,r=self.discovery(CAR)
