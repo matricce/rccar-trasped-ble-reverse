@@ -37,6 +37,17 @@ Neutro: 04 07 F9 85 B7 91 43 14 00 00 00 64 00 00 05 00 00 00 86
 
 Esses bytes incluem identificadores e contador daquela sessão. Para repetir, o script faz um novo pareamento; não pressupõe que uma sessão antiga continue válida. O LED parar de piscar, isoladamente, ainda não foi estabelecido como indicador de desligamento ou pareamento.
 
+### Quarto carrinho (`AE 96 C4`): resposta com checksum diferente
+
+Capturado em teste ao vivo no mesmo dia, com a ferramenta `tools/diag_scan.py` (escuta e classifica todo anúncio BLE, não só o formato esperado). O carrinho respondeu ao pedido de pareamento com estrutura correta — tipo `04`, operação `0A`, eco da identidade do controlador — porém checksum `35` onde o cálculo com semente `E9` esperava `0C`. O servidor antigo exigia esse checksum na resposta e descartava o carrinho silenciosamente; por isso as buscas terminavam vazias.
+
+A exigência foi removida do `web/server.py` e de `tools/test_movement.py` alinhando ao app oficial: a desmontagem de `calDataIsTrue` mostra que a recepção valida apenas comprimento, tipo, operação e o eco da identidade aleatória do controlador (gerada a cada busca, proteção mais forte que checksum). O checksum com semente `E9` é usado só para transmitir. Nos três primeiros carrinhos a resposta coincidentemente validava.
+
+Diferenças adicionais deste exemplar, relatadas pelo usuário e ainda não medidas:
+
+- Precisa de alguns segundos ligado antes de aceitar pareamento; os outros três aceitam imediatamente. Hipótese: firmware de revisão diferente (o checksum divergente já evidencia isso) com inicialização mais lenta, ou uma janela inicial em que escuta o controle físico dedicado antes de entrar em modo de pareamento BLE.
+- Nas sondas seguintes à primeira resposta, não respondeu mais — consistente com sair do modo de pareamento ou travar no primeiro controlador que respondeu. Religar o carrinho restaura o modo de pareamento.
+
 Foram conferidos `SetForward`, `SetBackward`, `BuildControlData`, `ProcessBroadcastConnection` e a função de manipulação de bits no ARM64:
 
 - Payload offset 8: bit 0 para frente, bit 1 para ré; ambos zerados no neutro.

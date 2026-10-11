@@ -4,16 +4,33 @@ Interface web com descoberta automática do ID de cada carrinho. O servidor Pyth
 usa o Bluetooth deste computador (Linux/BlueZ) para transmitir os anúncios BLE
 recuperados do app RCCar. A página se comunica com o servidor local por HTTP.
 
+## Pré-requisitos
+
+Somente Linux: o painel usa o BlueZ, a pilha Bluetooth oficial do Linux, que
+já vem instalada e ativa em praticamente toda distro de desktop. Em instalação
+mínima ou servidor, instale e ative:
+
+```sh
+sudo dnf install bluez python3-dbus python3-gobject   # Fedora
+sudo apt install bluez python3-dbus python3-gobject   # Debian/Ubuntu
+sudo pacman -S bluez python-dbus python-gobject       # Arch
+sudo systemctl enable --now bluetooth
+```
+
+O adaptador precisa oferecer anúncios BLE (qualquer dongle Bluetooth 4.0+
+oferece; se não oferecer, o servidor avisa ao iniciar). Use o Python do
+sistema, como no comando abaixo — os bindings D-Bus da distro não existem em
+ambientes virtuais de pyenv/uv. macOS e Windows não têm BlueZ e não são
+suportados.
+
 ## Iniciar
 
 ```sh
 /usr/bin/python3 web/server.py
 ```
 
-Abra <http://127.0.0.1:8767>. O Python do sistema precisa de `dbus-python` e
-PyGObject (`gi`); ambos já estão disponíveis nesta máquina. O adaptador precisa
-estar ligado e oferecer anúncios BLE. O servidor escuta apenas no computador
-local; não requer instalação de pacotes npm.
+Abra <http://127.0.0.1:8767>. O servidor escuta apenas no computador local;
+não requer instalação de pacotes npm.
 
 1. Ligue apenas o carrinho desejado, com a luz piscando, e feche o aplicativo no celular.
 2. Mantenha as rodas suspensas nos primeiros testes e clique em **Conectar carrinho**.
