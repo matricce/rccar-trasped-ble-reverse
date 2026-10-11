@@ -1,0 +1,1357 @@
+Method: System.Byte[] CreateDuimaData()
+
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W8, [0x12F017A]
+	005 Move X20, [0x1191D90]
+	006 Move TEMP, X8
+	007 And TEMP, TEMP, 1
+	008 Compare TEMP, 1
+	009 JumpIfEqual {16}
+	010 Move X0, [0x1191D90]
+	011 Call 0xD6FE68
+	012 Move X0, [0x1191D40]
+	013 Call 0xD6FE68
+	014 Move W8, 1
+	015 Move [X19+378], W8
+	016 Move X0, [X20]
+	017 Move W1, 19
+	018 Call 0xD6FF0C
+	019 Compare X0, 0
+	020 JumpIfEqual {58}
+	021 Move X8, [X0+24]
+	022 Move X19, X0
+	023 Compare W8, 0
+	024 JumpIfEqual {57}
+	025 Move W9, 4
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move [X19+32], W9
+	028 Move X20, [0x1191D40]
+	029 Move W9, 6
+	030 Move [X19+33], W9
+	031 Move X0, [X20]
+	032 Move W9, [X0+224]
+	033 Compare W9, 0
+	034 JumpIfNotEqual {37}
+	035 Call 0xD6FF9C
+	036 Move X8, [X19+24]
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 Move X9, [X20]
+	039 NotImplemented "Instruction CMP not yet implemented."
+	040 Move X9, [X9+184]
+	041 Move W9, [X9+18]
+	042 Move [X19+37], W9
+	043 Move X9, [X20]
+	044 NotImplemented "Instruction CMP not yet implemented."
+	045 Move X9, [X9+184]
+	046 Move W9, [X9+19]
+	047 Move [X19+38], W9
+	048 Move X8, [X20]
+	049 Move X0, X19
+	050 Move X8, [X8+184]
+	051 Move W8, [X8+20]
+	052 Move [X19+39], W8
+	053 Move X20, [X31+16]
+	054 Move X19, [X31+24]
+	055 Move X30, [X31+32]
+	056 Return X0
+	057 Call 0xD700C4
+	058 Call 0xD700BC
+
+Method: System.Void OnScanDataReceived(System.String data)
+
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move W8, [0x12F017D]
+	009 Move X21, [0x11918F0]
+	010 Move X20, X1
+	011 Move X19, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {30}
+	016 Move X0, [0x1191D90]
+	017 Call 0xD6FE68
+	018 Move X0, [0x11929F8]
+	019 Call 0xD6FE68
+	020 Move X0, [0x11918F0]
+	021 Call 0xD6FE68
+	022 Move X0, [0x1191D40]
+	023 Call 0xD6FE68
+	024 Move X0, [0x1191F08]
+	025 Call 0xD6FE68
+	026 Move X0, [0x1192A10]
+	027 Call 0xD6FE68
+	028 Move W8, 1
+	029 Move [X22+381], W8
+	030 Move X0, [X21]
+	031 Move W8, [X0+224]
+	032 Move X21, [0x1191D40]
+	033 Compare W8, 0
+	034 JumpIfNotEqual {36}
+	035 Call 0xD6FF9C
+	036 Move X0, X20
+	037 Move X1, X31
+	038 Call Convert.FromBase64String, X0
+	039 Move X8, [X21]
+	040 Move X20, X0
+	041 Move W9, [X8+224]
+	042 Compare W9, 0
+	043 JumpIfNotEqual {47}
+	044 Move X0, X8
+	045 Call 0xD6FF9C
+	046 Move X8, [X21]
+	047 Move X8, [X8+184]
+	048 Move W1, 4
+	049 Move W2, 10
+	050 Move X0, X20
+	051 Move W5, [X8+20]
+	052 Move W4, [X8+19]
+	053 Move W3, [X8+18]
+	054 Move X6, X31
+	055 Call HjdBluetoothHardwareInterface.calDataIsTrue, X0, X1, X2, X3, X4, X5
+	056 Move TEMP, X0
+	057 And TEMP, TEMP, 1
+	058 Compare TEMP, 1
+	059 JumpIfNotEqual {186}
+	060 Move X22, [0x1192A10]
+	061 Move X0, [X22]
+	062 Move W8, [X0+224]
+	063 Move X23, [0x1190F08]
+	064 Compare W8, 0
+	065 JumpIfNotEqual {68}
+	066 Call 0xD6FF9C
+	067 Move X0, [X22]
+	068 Move X8, [X0+184]
+	069 Move W9, 1
+	070 Move [X8+62], W9
+	071 Move X0, [X23]
+	072 Move W8, [X0+224]
+	073 Move X24, [0x11919F8]
+	074 Compare W8, 0
+	075 JumpIfNotEqual {78}
+	076 Call 0xD6FF9C
+	077 Move X0, [X23]
+	078 Move X8, [X0+184]
+	079 Move X9, [X24]
+	080 Move X1, [X8+336]
+	081 Move X8, [X9+184]
+	082 Move [X8], X1
+	083 Move X8, [X24]
+	084 Move X0, [X8+184]
+	085 Call 0xD6FE14
+	086 Move X8, [X22]
+	087 Move X8, [X8+184]
+	088 Move W8, [X8+56]
+	089 Compare W8, 0
+	090 JumpIfEqual {92}
+	091 Call ContainerRemoveCarOperUIController.ADVSendDisconnectCommand, X0
+	092 Move X0, [X21]
+	093 Move W8, [X0+224]
+	094 Compare W8, 0
+	095 JumpIfNotEqual {97}
+	096 Call 0xD6FF9C
+	097 Move X0, X31
+	098 Call HjdBluetoothHardwareInterface.bleuseNumber
+	099 Move X8, [X23]
+	100 Move W21, W0
+	101 Move W9, [X8+224]
+	102 Compare W9, 0
+	103 JumpIfNotEqual {107}
+	104 Move X0, X8
+	105 Call 0xD6FF9C
+	106 Move X8, [X23]
+	107 Compare X20, 0
+	108 JumpIfEqual {195}
+	109 Move W9, [X20+24]
+	110 NotImplemented "Instruction CMP not yet implemented."
+	111 Move X8, [X8+184]
+	112 Move X8, [X8+104]
+	113 Compare X8, 0
+	114 JumpIfEqual {195}
+	115 Move W9, [X8+24]
+	116 Compare W9, 0
+	117 JumpIfEqual {194}
+	118 Add X9, X20, W21
+	119 Move W9, [X9+32]
+	120 Move [X8+32], W9
+	121 Move W9, [X20+24]
+	122 Add W8, W21, 1
+	123 NotImplemented "Instruction CMP not yet implemented."
+	124 Move X9, [X23]
+	125 Move X9, [X9+184]
+	126 Move X9, [X9+104]
+	127 Compare X9, 0
+	128 JumpIfEqual {195}
+	129 Move W10, [X9+24]
+	130 NotImplemented "Instruction CMP not yet implemented."
+	131 Add X8, X20, W8
+	132 Move W8, [X8+32]
+	133 Move [X9+33], W8
+	134 Move W9, [X20+24]
+	135 Add W8, W21, 2
+	136 NotImplemented "Instruction CMP not yet implemented."
+	137 Move X9, [X23]
+	138 Move X9, [X9+184]
+	139 Move X9, [X9+104]
+	140 Compare X9, 0
+	141 JumpIfEqual {195}
+	142 Move W10, [X9+24]
+	143 NotImplemented "Instruction CMP not yet implemented."
+	144 Add X8, X20, W8
+	145 Move W8, [X8+32]
+	146 Move W20, 1
+	147 Move X0, X19
+	148 Move [X9+34], W8
+	149 Move X8, [X23]
+	150 Move X8, [X8+184]
+	151 Move [X8+112], W20
+	152 Call ContainerRemoveCarOperUIController.CreateCarbroadData, X0
+	153 Move X1, X0
+	154 Move X0, X19
+	155 Move [X0+32], X1
+	156 Call 0xD6FE14
+	157 NotImplemented "Instruction MOVI not yet implemented."
+	158 Move [X19+138], W20
+	159 Move [X19+64], W31
+	160 Move [X19+56], D0
+	161 Move X8, [0x1190D90]
+	162 Move W1, 10
+	163 Move X0, [X8]
+	164 Call 0xD6FF0C
+	165 Move [X19+40], X0
+	166 Move X1, X0
+	167 Move X0, X19
+	168 Call 0xD6FE14
+	169 Move X0, [X22]
+	170 Move W8, [X0+224]
+	171 Compare W8, 0
+	172 JumpIfNotEqual {174}
+	173 Call 0xD6FF9C
+	174 Move X20, [X31+48]
+	175 Move X19, [X31+56]
+	176 Move X22, [X31+32]
+	177 Move X21, [X31+40]
+	178 Move X24, [X31+16]
+	179 Move X23, [X31+24]
+	180 Move S0, 0.5
+	181 Move W0, 10
+	182 Move X1, X31
+	183 Move X30, [X31+64]
+	184 Call StartingExample.SetState, X0, V0
+	185 Return 
+	186 Move X20, [X31+48]
+	187 Move X19, [X31+56]
+	188 Move X22, [X31+32]
+	189 Move X21, [X31+40]
+	190 Move X24, [X31+16]
+	191 Move X23, [X31+24]
+	192 Move X30, [X31+64]
+	193 Return 
+	194 Call 0xD700C4
+	195 Call 0xD700BC
+
+Method: System.Byte[] CreateCarbroadData()
+
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W8, [0x12EF180]
+	006 Move X21, [0x1190D90]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {20}
+	012 Move X0, [0x1190D90]
+	013 Call 0xD6FE68
+	014 Move X0, [0x1190D40]
+	015 Call 0xD6FE68
+	016 Move X0, [0x1190F08]
+	017 Call 0xD6FE68
+	018 Move W8, 1
+	019 Move [X20+384], W8
+	020 Move X0, [X21]
+	021 Move W1, 19
+	022 Call 0xD6FF0C
+	023 Compare X0, 0
+	024 JumpIfEqual {182}
+	025 Move W8, [X0+24]
+	026 Move X20, X0
+	027 Compare W8, 0
+	028 JumpIfEqual {181}
+	029 Move W9, 4
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Move [X20+32], W9
+	032 Move X21, [0x1190F08]
+	033 Move W8, 7
+	034 Move [X20+33], W8
+	035 Move X0, [X21]
+	036 Move W8, [X0+224]
+	037 Compare W8, 0
+	038 JumpIfNotEqual {41}
+	039 Call 0xD6FF9C
+	040 Move X0, [X21]
+	041 Move X8, [X0+184]
+	042 Move X9, [X8+104]
+	043 Compare X9, 0
+	044 JumpIfEqual {182}
+	045 Move W8, [X9+24]
+	046 Compare W8, 0
+	047 JumpIfEqual {181}
+	048 Move X8, [X20+24]
+	049 NotImplemented "Instruction CMP not yet implemented."
+	050 Move W9, [X9+32]
+	051 Move [X20+34], W9
+	052 Move X9, [X21]
+	053 Move X9, [X9+184]
+	054 Move X9, [X9+104]
+	055 Compare X9, 0
+	056 JumpIfEqual {182}
+	057 Move W10, [X9+24]
+	058 NotImplemented "Instruction CMP not yet implemented."
+	059 NotImplemented "Instruction CMP not yet implemented."
+	060 Move W9, [X9+33]
+	061 Move [X20+35], W9
+	062 Move X9, [X21]
+	063 Move X9, [X9+184]
+	064 Move X9, [X9+104]
+	065 Compare X9, 0
+	066 JumpIfEqual {182}
+	067 Move W10, [X9+24]
+	068 NotImplemented "Instruction CMP not yet implemented."
+	069 NotImplemented "Instruction CMP not yet implemented."
+	070 Move W9, [X9+34]
+	071 Move X21, [0x1190D40]
+	072 Move [X20+36], W9
+	073 Move X0, [X21]
+	074 Move W9, [X0+224]
+	075 Compare W9, 0
+	076 JumpIfNotEqual {79}
+	077 Call 0xD6FF9C
+	078 Move X8, [X20+24]
+	079 NotImplemented "Instruction CMP not yet implemented."
+	080 Move X9, [X21]
+	081 NotImplemented "Instruction CMP not yet implemented."
+	082 Move X9, [X9+184]
+	083 Move W9, [X9+18]
+	084 Move [X20+37], W9
+	085 Move X9, [X21]
+	086 NotImplemented "Instruction CMP not yet implemented."
+	087 Move X9, [X9+184]
+	088 Move W9, [X9+19]
+	089 Move [X20+38], W9
+	090 Move X9, [X21]
+	091 Move X9, [X9+184]
+	092 Move W9, [X9+20]
+	093 Move [X20+39], W9
+	094 Move X9, [X19+40]
+	095 Compare X9, 0
+	096 JumpIfEqual {182}
+	097 Move W10, [X9+24]
+	098 Compare W10, 0
+	099 JumpIfEqual {181}
+	100 NotImplemented "Instruction CMP not yet implemented."
+	101 Move W9, [X9+32]
+	102 Move [X20+40], W9
+	103 Move X9, [X19+40]
+	104 Compare X9, 0
+	105 JumpIfEqual {182}
+	106 Move W10, [X9+24]
+	107 NotImplemented "Instruction CMP not yet implemented."
+	108 NotImplemented "Instruction CMP not yet implemented."
+	109 Move W9, [X9+33]
+	110 Move [X20+41], W9
+	111 Move X9, [X19+40]
+	112 Compare X9, 0
+	113 JumpIfEqual {182}
+	114 Move W10, [X9+24]
+	115 NotImplemented "Instruction CMP not yet implemented."
+	116 NotImplemented "Instruction CMP not yet implemented."
+	117 Move W9, [X9+34]
+	118 Move [X20+42], W9
+	119 Move X9, [X19+40]
+	120 Compare X9, 0
+	121 JumpIfEqual {182}
+	122 Move W10, [X9+24]
+	123 NotImplemented "Instruction CMP not yet implemented."
+	124 NotImplemented "Instruction CMP not yet implemented."
+	125 Move W9, [X9+35]
+	126 Move [X20+43], W9
+	127 Move X9, [X19+40]
+	128 Compare X9, 0
+	129 JumpIfEqual {182}
+	130 Move W10, [X9+24]
+	131 NotImplemented "Instruction CMP not yet implemented."
+	132 NotImplemented "Instruction CMP not yet implemented."
+	133 Move W9, [X9+36]
+	134 Move [X20+44], W9
+	135 Move X9, [X19+40]
+	136 Compare X9, 0
+	137 JumpIfEqual {182}
+	138 Move W10, [X9+24]
+	139 NotImplemented "Instruction CMP not yet implemented."
+	140 NotImplemented "Instruction CMP not yet implemented."
+	141 Move W9, [X9+37]
+	142 Move [X20+45], W9
+	143 Move X9, [X19+40]
+	144 Compare X9, 0
+	145 JumpIfEqual {182}
+	146 Move W10, [X9+24]
+	147 NotImplemented "Instruction CMP not yet implemented."
+	148 NotImplemented "Instruction CMP not yet implemented."
+	149 Move W9, [X9+38]
+	150 Move [X20+46], W9
+	151 Move X9, [X19+40]
+	152 Compare X9, 0
+	153 JumpIfEqual {182}
+	154 Move W10, [X9+24]
+	155 NotImplemented "Instruction CMP not yet implemented."
+	156 NotImplemented "Instruction CMP not yet implemented."
+	157 Move W9, [X9+39]
+	158 Move [X20+47], W9
+	159 Move X9, [X19+40]
+	160 Compare X9, 0
+	161 JumpIfEqual {182}
+	162 Move W10, [X9+24]
+	163 NotImplemented "Instruction CMP not yet implemented."
+	164 NotImplemented "Instruction CMP not yet implemented."
+	165 Move W9, [X9+40]
+	166 Move [X20+48], W9
+	167 Move X9, [X19+40]
+	168 Compare X9, 0
+	169 JumpIfEqual {182}
+	170 Move W10, [X9+24]
+	171 NotImplemented "Instruction CMP not yet implemented."
+	172 NotImplemented "Instruction CMP not yet implemented."
+	173 Move W8, [X9+41]
+	174 Move X0, X20
+	175 Move [X20+49], W8
+	176 Move X20, [X31+16]
+	177 Move X19, [X31+24]
+	178 Move X30, [X31+32]
+	179 Move X21, [X31+40]
+	180 Return X0
+	181 Call 0xD700C4
+	182 Call 0xD700BC
+
+Method: System.Void SendClientData()
+
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W8, [0x12EF184]
+	006 Move X21, [0x1190D90]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {18}
+	012 Move X0, [0x1190D90]
+	013 Call 0xD6FE68
+	014 Move X0, [0x1191A10]
+	015 Call 0xD6FE68
+	016 Move W8, 1
+	017 Move [X20+388], W8
+	018 Move X0, [X21]
+	019 Move W1, 10
+	020 Call 0xD6FF0C
+	021 Move X9, [X19+40]
+	022 Compare X9, 0
+	023 JumpIfEqual {102}
+	024 Move W8, [X9+24]
+	025 Compare W8, 0
+	026 JumpIfEqual {101}
+	027 Move X20, X0
+	028 Compare X0, 0
+	029 JumpIfEqual {102}
+	030 Move W8, [X20+24]
+	031 Compare W8, 0
+	032 JumpIfEqual {101}
+	033 Move W9, [X9+32]
+	034 Move [X20+32], W9
+	035 Move X9, [X19+40]
+	036 Compare X9, 0
+	037 JumpIfEqual {102}
+	038 Move W10, [X9+24]
+	039 NotImplemented "Instruction CMP not yet implemented."
+	040 NotImplemented "Instruction CMP not yet implemented."
+	041 Move W9, [X9+33]
+	042 Move [X20+33], W9
+	043 Move X9, [X19+40]
+	044 Compare X9, 0
+	045 JumpIfEqual {102}
+	046 Move W10, [X9+24]
+	047 NotImplemented "Instruction CMP not yet implemented."
+	048 NotImplemented "Instruction CMP not yet implemented."
+	049 Move W9, [X9+34]
+	050 Move [X20+34], W9
+	051 Move X9, [X19+40]
+	052 Compare X9, 0
+	053 JumpIfEqual {102}
+	054 Move W10, [X9+24]
+	055 NotImplemented "Instruction CMP not yet implemented."
+	056 NotImplemented "Instruction CMP not yet implemented."
+	057 Move W9, [X9+35]
+	058 Move [X20+35], W9
+	059 Move X9, [X19+40]
+	060 Compare X9, 0
+	061 JumpIfEqual {102}
+	062 Move W10, [X9+24]
+	063 NotImplemented "Instruction CMP not yet implemented."
+	064 NotImplemented "Instruction CMP not yet implemented."
+	065 Move W9, [X9+36]
+	066 Move [X20+36], W9
+	067 Move X9, [X19+40]
+	068 Compare X9, 0
+	069 JumpIfEqual {102}
+	070 Move W10, [X9+24]
+	071 NotImplemented "Instruction CMP not yet implemented."
+	072 NotImplemented "Instruction CMP not yet implemented."
+	073 Move W9, [X9+37]
+	074 Move [X20+37], W9
+	075 Move X9, [X19+40]
+	076 Compare X9, 0
+	077 JumpIfEqual {102}
+	078 Move W10, [X9+24]
+	079 NotImplemented "Instruction CMP not yet implemented."
+	080 NotImplemented "Instruction CMP not yet implemented."
+	081 Move W8, [X9+38]
+	082 Move X0, X20
+	083 Move X2, X31
+	084 Move [X20+38], W8
+	085 Move X1, [X19+48]
+	086 Move X19, [0x1191A10]
+	087 Call HjdBleTool.data_copy, X0, X1
+	088 Move X0, [X19]
+	089 Move W8, [X0+224]
+	090 Compare W8, 0
+	091 JumpIfNotEqual {93}
+	092 Call 0xD6FF9C
+	093 Move X0, X20
+	094 Move X20, [X31+16]
+	095 Move X19, [X31+24]
+	096 Move X1, X31
+	097 Move X30, [X31+32]
+	098 Move X21, [X31+40]
+	099 Call StartingExample.SendByte, X0
+	100 Return 
+	101 Call 0xD700C4
+	102 Call 0xD700BC
+
+Method: System.Void ProcessBleConnection()
+
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+40], X21
+	004 Move [X31+48], X20
+	005 Move [X31+56], X19
+	006 Move W8, [0x12F1186]
+	007 Move X21, [0x1192D90]
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {17}
+	013 Move X0, [0x1192D90]
+	014 Call 0xD6FE68
+	015 Move W8, 1
+	016 Move [X20+390], W8
+	017 Move X0, [X21]
+	018 Move W1, 10
+	019 Move [X31+28], W31
+	020 Move [X31+24], W31
+	021 Move [X31+20], W31
+	022 Move [X31+16], W31
+	023 Move [X31+12], W31
+	024 Call 0xD6FF0C
+	025 Move X20, X19
+	026 Move [X20+40], X0
+	027 Move X1, X0
+	028 Move X0, X20
+	029 Call 0xD6FE14
+	030 Add X1, X31, 28
+	031 Add X2, X31, 24
+	032 Add X3, X31, 20
+	033 Add X4, X31, 16
+	034 Add X5, X31, 12
+	035 Move X0, X19
+	036 Call ContainerRemoveCarOperUIController.BuildControlData, X0, X1, X2, X3, X4, X5
+	037 Move X8, [X20]
+	038 Compare X8, 0
+	039 JumpIfEqual {105}
+	040 Move W9, [X8+24]
+	041 Compare W9, 0
+	042 JumpIfEqual {106}
+	043 Move W9, [X31+28]
+	044 Move [X8+32], W9
+	045 Move X8, [X20]
+	046 Compare X8, 0
+	047 JumpIfEqual {105}
+	048 Move W9, [X8+24]
+	049 NotImplemented "Instruction CMP not yet implemented."
+	050 Move W9, [X31+24]
+	051 Move [X8+33], W9
+	052 Move X8, [X20]
+	053 Compare X8, 0
+	054 JumpIfEqual {105}
+	055 Move W9, [X8+24]
+	056 NotImplemented "Instruction CMP not yet implemented."
+	057 Move W9, [X31+20]
+	058 Move [X8+34], W9
+	059 Move X8, [X20]
+	060 Compare X8, 0
+	061 JumpIfEqual {105}
+	062 Move W9, [X8+24]
+	063 NotImplemented "Instruction CMP not yet implemented."
+	064 Move W9, [X31+16]
+	065 Move [X8+35], W9
+	066 Move X8, [X20]
+	067 Compare X8, 0
+	068 JumpIfEqual {105}
+	069 Move W9, [X8+24]
+	070 NotImplemented "Instruction CMP not yet implemented."
+	071 Move W9, [X31+12]
+	072 Move [X8+36], W9
+	073 Move X8, [X20]
+	074 Compare X8, 0
+	075 JumpIfEqual {105}
+	076 Move W9, [X8+24]
+	077 NotImplemented "Instruction CMP not yet implemented."
+	078 Move W9, [X19+72]
+	079 Move [X8+38], W9
+	080 Move W8, [X19+137]
+	081 Compare W8, 0
+	082 JumpIfEqual {90}
+	083 Move X0, [X21]
+	084 Move W1, 10
+	085 Call 0xD6FF0C
+	086 Move X1, X0
+	087 Move [X20], X0
+	088 Move X0, X20
+	089 Call 0xD6FE14
+	090 Move X0, [X19+40]
+	091 Move X1, [X19+48]
+	092 Move X2, X31
+	093 Call HjdBleTool.data_isalike, X0, X1
+	094 Move X0, X19
+	095 Call ContainerRemoveCarOperUIController.TryStartCoroutines, X0
+	096 Move X0, X19
+	097 Move X20, [X31+48]
+	098 Move X19, [X31+56]
+	099 Move X30, [X31+32]
+	100 Move X21, [X31+40]
+	101 Move W1, 2
+	102 Add X31, X31, 64
+	103 Call ContainerRemoveCarOperUIController.UpdateTimers, X0, X1
+	104 Return 
+	105 Call 0xD700BC
+	106 Call 0xD700C4
+
+Method: System.Void ProcessBroadcastConnection()
+
+	001 Subtract X31, X31, 80
+	002 Move [X31+32], X30
+	003 Move [X31+40], X23
+	004 Move [X31+48], X22
+	005 Move [X31+56], X21
+	006 Move [X31+64], X20
+	007 Move [X31+72], X19
+	008 Move W8, [0x12F1187]
+	009 Move X20, [0x1192D90]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {29}
+	015 Move X0, [0x1193A18]
+	016 Call 0xD6FE68
+	017 Move X0, [0x1192D90]
+	018 Call 0xD6FE68
+	019 Move X0, [0x1192D40]
+	020 Call 0xD6FE68
+	021 Move X0, [0x1196650]
+	022 Call 0xD6FE68
+	023 Move X0, [0x1196658]
+	024 Call 0xD6FE68
+	025 Move X0, [0x1196660]
+	026 Call 0xD6FE68
+	027 Move W8, 1
+	028 Move [X21+391], W8
+	029 Move X0, [X20]
+	030 Move W1, 10
+	031 Move [X31+28], W31
+	032 Move [X31+24], W31
+	033 Move [X31+20], W31
+	034 Move [X31+16], W31
+	035 Move [X31+12], W31
+	036 Call 0xD6FF0C
+	037 Move X20, X19
+	038 Move [X20+40], X0
+	039 Move X1, X0
+	040 Move X0, X20
+	041 Call 0xD6FE14
+	042 Add X1, X31, 28
+	043 Add X2, X31, 24
+	044 Add X3, X31, 20
+	045 Add X4, X31, 16
+	046 Add X5, X31, 12
+	047 Move X0, X19
+	048 Call ContainerRemoveCarOperUIController.BuildControlData, X0, X1, X2, X3, X4, X5
+	049 Move X8, [X20]
+	050 Compare X8, 0
+	051 JumpIfEqual {215}
+	052 Move W9, [X8+24]
+	053 Compare W9, 0
+	054 JumpIfEqual {216}
+	055 Move W9, [X31+28]
+	056 Move [X8+32], W9
+	057 Move X8, [X20]
+	058 Compare X8, 0
+	059 JumpIfEqual {215}
+	060 Move W9, [X8+24]
+	061 NotImplemented "Instruction CMP not yet implemented."
+	062 Move W9, [X31+24]
+	063 Move [X8+33], W9
+	064 Move X8, [X20]
+	065 Compare X8, 0
+	066 JumpIfEqual {215}
+	067 Move W9, [X8+24]
+	068 NotImplemented "Instruction CMP not yet implemented."
+	069 Move W9, [X31+20]
+	070 Move [X8+34], W9
+	071 Move X8, [X20]
+	072 Compare X8, 0
+	073 JumpIfEqual {215}
+	074 Move W9, [X8+24]
+	075 NotImplemented "Instruction CMP not yet implemented."
+	076 Move W9, [X31+16]
+	077 Move [X8+35], W9
+	078 Move X8, [X20]
+	079 Compare X8, 0
+	080 JumpIfEqual {215}
+	081 Move W9, [X8+24]
+	082 NotImplemented "Instruction CMP not yet implemented."
+	083 Move W9, [X31+12]
+	084 Move [X8+36], W9
+	085 Move X8, [X20]
+	086 Compare X8, 0
+	087 JumpIfEqual {215}
+	088 Move W9, [X8+24]
+	089 NotImplemented "Instruction CMP not yet implemented."
+	090 Move W9, [X19+72]
+	091 Move X2, X31
+	092 Move [X8+38], W9
+	093 Move X0, [X19+40]
+	094 Move X1, [X19+48]
+	095 Call HjdBleTool.data_isalike, X0, X1
+	096 Move TEMP, X0
+	097 And TEMP, TEMP, 1
+	098 Compare TEMP, 1
+	099 JumpIfEqual {118}
+	100 Move W8, [X19+64]
+	101 Compare W8, 0
+	102 JumpIfNotEqual {118}
+	103 Move X0, [X19+40]
+	104 Move X1, [X19+48]
+	105 Move X2, X31
+	106 Call HjdBleTool.data_copy, X0, X1
+	107 Move X0, X19
+	108 Call ContainerRemoveCarOperUIController.CreateCarbroadData, X0
+	109 Move X20, X19
+	110 Move [X20+32], X0
+	111 Move X1, X0
+	112 Move X0, X20
+	113 Call 0xD6FE14
+	114 Move W8, 1
+	115 Move W9, 3
+	116 Move [X20+106], W8
+	117 Move [X20+32], W9
+	118 Move W8, [X19+138]
+	119 Compare W8, 0
+	120 JumpIfEqual {204}
+	121 Move X22, [0x1196660]
+	122 Move [X19+138], W31
+	123 Move X0, [X22]
+	124 Move W8, [X0+224]
+	125 Compare W8, 0
+	126 JumpIfNotEqual {129}
+	127 Call 0xD6FF9C
+	128 Move X0, [X22]
+	129 Move X8, [X0+184]
+	130 Move X20, [X8+56]
+	131 Move X23, [0x1192D40]
+	132 Compare X20, 0
+	133 JumpIfNotEqual {155}
+	134 Move W8, [X0+224]
+	135 Compare W8, 0
+	136 Invalid "Jump target not found in method."
+	137 Call 0xD6FF9C
+	138 Move X0, [X22]
+	139 Move X8, [X0+184]
+	140 Move X9, [0x1193A18]
+	141 Move X21, [X8]
+	142 Move X0, [X9]
+	143 Call 0xD700B0
+	144 Move X8, [0x1196650]
+	145 Move X1, X21
+	146 Move X3, X31
+	147 Move X20, X0
+	148 Move X2, [X8]
+	149 Call Action`1<Object>..ctor, X0, X1, X2
+	150 Move X8, [X22]
+	151 Move X1, X20
+	152 Move X0, [X8+184]
+	153 Move [X0+56], X20
+	154 Call 0xD6FE14
+	155 Move X0, [X23]
+	156 Move W8, [X0+224]
+	157 Compare W8, 0
+	158 JumpIfNotEqual {160}
+	159 Call 0xD6FF9C
+	160 Move X0, X20
+	161 Move X1, X31
+	162 Call HjdBluetoothHardwareInterface.StopAdvertising, X0
+	163 Move X0, [X22]
+	164 Move W8, [X0+224]
+	165 Compare W8, 0
+	166 JumpIfNotEqual {169}
+	167 Call 0xD6FF9C
+	168 Move X0, [X22]
+	169 Move X8, [X0+184]
+	170 Move X20, [X8+64]
+	171 Compare X20, 0
+	172 JumpIfNotEqual {194}
+	173 Move W8, [X0+224]
+	174 Compare W8, 0
+	175 Invalid "Jump target not found in method."
+	176 Call 0xD6FF9C
+	177 Move X0, [X22]
+	178 Move X8, [X0+184]
+	179 Move X9, [0x1193A18]
+	180 Move X21, [X8]
+	181 Move X0, [X9]
+	182 Call 0xD700B0
+	183 Move X8, [0x1196658]
+	184 Move X1, X21
+	185 Move X3, X31
+	186 Move X20, X0
+	187 Move X2, [X8]
+	188 Call Action`1<Object>..ctor, X0, X1, X2
+	189 Move X8, [X22]
+	190 Move X1, X20
+	191 Move X0, [X8+184]
+	192 Move [X0+64], X20
+	193 Call 0xD6FE14
+	194 Move X0, [X23]
+	195 Move X21, [X19+32]
+	196 Move W8, [X0+224]
+	197 Compare W8, 0
+	198 JumpIfNotEqual {200}
+	199 Call 0xD6FF9C
+	200 Move X0, X20
+	201 Move X1, X21
+	202 Move X2, X31
+	203 Call HjdBluetoothHardwareInterface.StartAdvertising, X0, X1
+	204 Move X0, X19
+	205 Move X20, [X31+64]
+	206 Move X19, [X31+72]
+	207 Move X22, [X31+48]
+	208 Move X21, [X31+56]
+	209 Move X30, [X31+32]
+	210 Move X23, [X31+40]
+	211 Move W1, 12
+	212 Add X31, X31, 80
+	213 Call ContainerRemoveCarOperUIController.UpdateTimers, X0, X1
+	214 Return 
+	215 Call 0xD700BC
+	216 Call 0xD700C4
+
+Method: System.Byte[] BuildControlData(out System.Byte data1, out System.Byte data2, out System.Byte data3, out System.Byte data4, out System.Byte data5)
+
+	001 Move [X31-80], X30
+	002 Move [X31+16], X26
+	003 Move [X31+24], X25
+	004 Move [X31+32], X24
+	005 Move [X31+40], X23
+	006 Move [X31+48], X22
+	007 Move [X31+56], X21
+	008 Move [X31+64], X20
+	009 Move [X31+72], X19
+	010 Move W8, [0x12EF188]
+	011 Move X26, [0x1190F08]
+	012 Move X19, X5
+	013 Move X20, X4
+	014 Move X21, X3
+	015 Move X22, X2
+	016 Move X23, X1
+	017 Move X24, X0
+	018 Move TEMP, X8
+	019 And TEMP, TEMP, 1
+	020 Compare TEMP, 1
+	021 JumpIfEqual {38}
+	022 Move X0, [0x1190D90]
+	023 Call 0xD6FE68
+	024 Move X0, [0x11912B8]
+	025 Call 0xD6FE68
+	026 Move X0, [0x1192078]
+	027 Call 0xD6FE68
+	028 Move X0, [0x1191AE8]
+	029 Call 0xD6FE68
+	030 Move X0, [0x1190F08]
+	031 Call 0xD6FE68
+	032 Move X0, [0x1191A10]
+	033 Call 0xD6FE68
+	034 Move X0, [0x1194720]
+	035 Call 0xD6FE68
+	036 Move W8, 1
+	037 Move [X25+392], W8
+	038 Move [X23], W31
+	039 Move [X22], W31
+	040 Move [X21], W31
+	041 Move [X20], W31
+	042 Move [X19], W31
+	043 Move X0, [X26]
+	044 Move W8, [X0+224]
+	045 Compare W8, 0
+	046 JumpIfNotEqual {49}
+	047 Call 0xD6FF9C
+	048 Move X0, [X26]
+	049 Move X8, [X0+184]
+	050 Move W8, [X8+114]
+	051 Compare W8, 0
+	052 JumpIfEqual {70}
+	053 Move W8, [X24+152]
+	054 Compare W8, 0
+	055 JumpIfNotEqual {61}
+	056 Move W8, 1
+	057 Move X0, X31
+	058 Move [X24+152], W8
+	059 Call Time.get_realtimeSinceStartup
+	060 Move [X24+156], S0
+	061 Move X0, X24
+	062 Call ContainerRemoveCarOperUIController.ShouldStopAutoDemo, X0
+	063 Move TEMP, X0
+	064 And TEMP, TEMP, 1
+	065 Compare TEMP, 1
+	066 JumpIfNotEqual {102}
+	067 Move X0, X24
+	068 Call ContainerRemoveCarOperUIController.StopAutoDemo, X0
+	069 Move X0, [X26]
+	070 Move [X24+152], W31
+	071 Move [X24+156], W31
+	072 Move W8, [X0+224]
+	073 Compare W8, 0
+	074 JumpIfNotEqual {77}
+	075 Call 0xD6FF9C
+	076 Move X0, [X26]
+	077 Move X8, [X0+184]
+	078 Move W8, [X8+136]
+	079 NotImplemented "Instruction CMP not yet implemented."
+	080 Move [X24+164], W8
+	081 Move W0, [X23]
+	082 Move W2, 1
+	083 Move W1, W31
+	084 Move X3, X31
+	085 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	086 Move [X23], W0
+	087 Move W0, [X21]
+	088 Move W2, 1
+	089 Move W1, W31
+	090 Move X3, X31
+	091 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	092 Move [X21], W0
+	093 Move W9, [X0+224]
+	094 Compare W9, 0
+	095 JumpIfNotEqual {100}
+	096 Call 0xD6FF9C
+	097 Move X8, [X26]
+	098 Move X8, [X8+184]
+	099 Move W8, [X8+136]
+	100 Add W31, W8, 1
+	101 Move W25, W31
+	102 Move X0, X24
+	103 Move X1, X23
+	104 Move X2, X22
+	105 Move X3, X21
+	106 Call ContainerRemoveCarOperUIController.ApplyAutoDemoControl, X0, X1, X2, X3
+	107 Move W25, 1
+	108 Move W8, [X24+139]
+	109 Move [X24+164], W31
+	110 Compare W8, 0
+	111 JumpIfEqual {135}
+	112 Move X0, [X26]
+	113 Move W8, [X0+224]
+	114 Compare W8, 0
+	115 JumpIfNotEqual {118}
+	116 Call 0xD6FF9C
+	117 Move X0, [X26]
+	118 Move X8, [X0+184]
+	119 Move W8, [X8+144]
+	120 NotImplemented "Instruction CMP not yet implemented."
+	121 Move X8, [0x11912B8]
+	122 Move X0, [X8]
+	123 Move W8, [X0+224]
+	124 Compare W8, 0
+	125 Invalid "Jump target not found in method."
+	126 Call 0xD6FF9C
+	127 Move X8, [0x1194720]
+	128 Move X1, X31
+	129 Move X0, [X8]
+	130 Call Debug.Log, X0
+	131 Move W8, 58
+	132 Move X0, X24
+	133 Move [X24+140], W8
+	134 Call ContainerRemoveCarOperUIController.ClearRate30BlueSpeedBoost, X0
+	135 Move TEMP, X25
+	136 And TEMP, TEMP, 1
+	137 Compare TEMP, 1
+	138 JumpIfNotEqual {147}
+	139 Move W25, 1
+	140 Move [X24+164], W8
+	141 Move W0, [X23]
+	142 Move W1, 1
+	143 Move W2, 1
+	144 Move X3, X31
+	145 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	146 Move [X23], W0
+	147 Move X0, [X26]
+	148 Move W8, [X0+224]
+	149 Compare W8, 0
+	150 JumpIfNotEqual {153}
+	151 Call 0xD6FF9C
+	152 Move X0, [X26]
+	153 Move X8, [X0+184]
+	154 Move W8, [X8+132]
+	155 NotImplemented "Instruction CMP not yet implemented."
+	156 Move W1, 2
+	157 Move W9, [X0+224]
+	158 Compare W9, 0
+	159 JumpIfNotEqual {164}
+	160 Call 0xD6FF9C
+	161 Move X8, [X26]
+	162 Move X8, [X8+184]
+	163 Move W8, [X8+132]
+	164 Add W31, W8, 1
+	165 Move W1, 3
+	166 Move W0, [X23]
+	167 Move W2, 1
+	168 Move X3, X31
+	169 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	170 Move [X23], W0
+	171 Move X0, [X26]
+	172 Move W8, [X0+224]
+	173 Compare W8, 0
+	174 JumpIfNotEqual {177}
+	175 Call 0xD6FF9C
+	176 Move X0, [X26]
+	177 Move X8, [X0+184]
+	178 Move W8, [X8+113]
+	179 Compare W8, 0
+	180 JumpIfEqual {188}
+	181 Move W0, [X21]
+	182 Move W2, 1
+	183 Move W1, W31
+	184 Move X3, X31
+	185 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	186 Move W25, W31
+	187 Move [X21], W0
+	188 Move W25, W31
+	189 Move X0, [X26]
+	190 Move W8, [X0+224]
+	191 Compare W8, 0
+	192 JumpIfNotEqual {195}
+	193 Call 0xD6FF9C
+	194 Move X0, [X26]
+	195 Move X8, [X0+184]
+	196 Move W8, [X8+124]
+	197 Compare W8, 0
+	198 JumpIfEqual {205}
+	199 Move W0, [X21]
+	200 Move W1, 2
+	201 Move W2, 1
+	202 Move X3, X31
+	203 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	204 Move [X21], W0
+	205 Move X0, [X24+248]
+	206 Compare X0, 0
+	207 JumpIfEqual {477}
+	208 Move X8, [0x1191AE8]
+	209 Move X1, [X8]
+	210 Call 0x1142588, X0
+	211 Compare X0, 0
+	212 JumpIfEqual {477}
+	213 Move W8, [X0+136]
+	214 NotImplemented "Instruction CMP not yet implemented."
+	215 Move W0, [X21]
+	216 Move W1, 3
+	217 Move W2, 1
+	218 Move X3, X31
+	219 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	220 Move [X21], W0
+	221 Move X0, [X26]
+	222 Move W8, [X0+224]
+	223 Compare W8, 0
+	224 JumpIfNotEqual {227}
+	225 Call 0xD6FF9C
+	226 Move X0, [X26]
+	227 Move X8, [X0+184]
+	228 Move W8, [X8+258]
+	229 Compare W8, 0
+	230 JumpIfEqual {238}
+	231 Move W0, [X21]
+	232 Move W1, 4
+	233 Move W2, 1
+	234 Move X3, X31
+	235 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	236 Move [X21], W0
+	237 Move X0, [X26]
+	238 Move W8, [X0+224]
+	239 Compare W8, 0
+	240 JumpIfNotEqual {243}
+	241 Call 0xD6FF9C
+	242 Move X0, [X26]
+	243 Move X8, [X0+184]
+	244 Move W8, [X8+259]
+	245 Compare W8, 0
+	246 JumpIfEqual {253}
+	247 Move W0, [X21]
+	248 Move W1, 5
+	249 Move W2, 1
+	250 Move X3, X31
+	251 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	252 Move [X21], W0
+	253 Compare W25, 0
+	254 JumpIfEqual {258}
+	255 Move [X24+144], X31
+	256 Move X0, X24
+	257 Call ContainerRemoveCarOperUIController.ClearRate30BlueSpeedBoost, X0
+	258 Move X0, [X26]
+	259 Move W8, [X0+224]
+	260 Compare W8, 0
+	261 JumpIfNotEqual {264}
+	262 Call 0xD6FF9C
+	263 Move X0, [X26]
+	264 Move X8, [X0+184]
+	265 Move W9, [X8+113]
+	266 Compare W9, 0
+	267 JumpIfEqual {325}
+	268 Move X0, X24
+	269 Call ContainerRemoveCarOperUIController.ClearRate30BlueSpeedBoost, X0
+	270 Move X0, X24
+	271 Call ContainerRemoveCarOperUIController.GetDingsuSpeedCode, X0
+	272 Move [X22], W0
+	273 Move W8, 100
+	274 Move [X20], W8
+	275 Move X0, [X24+320]
+	276 Compare X0, 0
+	277 JumpIfEqual {477}
+	278 Move X8, [0x1192078]
+	279 Move X1, [X8]
+	280 Call 0x1142588, X0
+	281 Compare X0, 0
+	282 JumpIfEqual {477}
+	283 Move W8, [X0+264]
+	284 Move X24, [0x1190D90]
+	285 Compare W8, 0
+	286 JumpIfEqual {293}
+	287 Move W0, [X19]
+	288 Move W2, 1
+	289 Move W1, W31
+	290 Move X3, X31
+	291 Call HjdBleTool.setIntegerSomeBit, X0, X1, X2
+	292 Move [X19], W0
+	293 Move X0, [X24]
+	294 Move W1, 5
+	295 Call 0xD6FF0C
+	296 Compare X0, 0
+	297 JumpIfEqual {477}
+	298 Move W8, [X0+24]
+	299 Compare W8, 0
+	300 JumpIfEqual {478}
+	301 Move W9, [X23]
+	302 NotImplemented "Instruction CMP not yet implemented."
+	303 Move [X0+32], W9
+	304 Move W9, [X22]
+	305 NotImplemented "Instruction CMP not yet implemented."
+	306 Move [X0+33], W9
+	307 Move W9, [X21]
+	308 NotImplemented "Instruction CMP not yet implemented."
+	309 Move [X0+34], W9
+	310 Move W9, [X20]
+	311 NotImplemented "Instruction CMP not yet implemented."
+	312 Move [X0+35], W9
+	313 Move W8, [X19]
+	314 Move X20, [X31+64]
+	315 Move X19, [X31+72]
+	316 Move X22, [X31+48]
+	317 Move X21, [X31+56]
+	318 Move X24, [X31+32]
+	319 Move X23, [X31+40]
+	320 Move X26, [X31+16]
+	321 Move X25, [X31+24]
+	322 Move [X0+36], W8
+	323 Move X30, [X31+80]
+	324 Return X0
+	325 Move W9, [X0+224]
+	326 Compare W9, 0
+	327 JumpIfNotEqual {331}
+	328 Call 0xD6FF9C
+	329 Move X8, [X26]
+	330 Move X8, [X8+184]
+	331 Move S0, [X8+156]
+	332 Move [X24+144], X31
+	333 NotImplemented "Instruction FCMP not yet implemented."
+	334 Move X25, [0x1191A10]
+	335 Move X0, [X25]
+	336 Move W8, [X0+224]
+	337 Compare W8, 0
+	338 JumpIfNotEqual {341}
+	339 Call 0xD6FF9C
+	340 Move X0, [X25]
+	341 Move X8, [X0+184]
+	342 Move W8, [X8+56]
+	343 Compare W8, 0
+	344 JumpIfEqual {410}
+	345 Move X0, [X26]
+	346 Move W8, [X0+224]
+	347 Compare W8, 0
+	348 JumpIfNotEqual {351}
+	349 Call 0xD6FF9C
+	350 Move X0, [X26]
+	351 Move X8, [X0+184]
+	352 Move W25, [X8+144]
+	353 NotImplemented "Instruction CMP not yet implemented."
+	354 Move W9, [X24+160]
+	355 Move W8, [X24+164]
+	356 NotImplemented "Instruction CMP not yet implemented."
+	357 Move [X24+160], W8
+	358 Move X8, [0x11912B8]
+	359 Move X0, [X8]
+	360 Move W8, [X0+224]
+	361 Compare W8, 0
+	362 Invalid "Jump target not found in method."
+	363 Call 0xD6FF9C
+	364 Move X8, [0x1194720]
+	365 Move X1, X31
+	366 Move X0, [X8]
+	367 Call Debug.Log, X0
+	368 Move X0, X24
+	369 Call ContainerRemoveCarOperUIController.ClearRate30BlueSpeedBoost, X0
+	370 Move W8, 58
+	371 Move [X24+140], W8
+	372 Move X0, [X26]
+	373 Move W8, [X0+224]
+	374 Compare W8, 0
+	375 JumpIfNotEqual {378}
+	376 Call 0xD6FF9C
+	377 Move X0, [X26]
+	378 Move X8, [X0+184]
+	379 Move S0, [X24+140]
+	380 Move S1, [X8+156]
+	381 NotImplemented "Instruction SCVTF not yet implemented."
+	382 Move W8, 0x42680000
+	383 NotImplemented "Instruction FABS not yet implemented."
+	384 Multiply S0, S1, S0
+	385 Move S1, W8
+	386 NotImplemented "Instruction FCMP not yet implemented."
+	387 Move W8, [X24+139]
+	388 Compare W8, 0
+	389 JumpIfNotEqual {449}
+	390 Move X25, X24
+	391 Add X25, X25, 120
+	392 Move X1, [X25]
+	393 Move W8, 1
+	394 Move [X25+19], W8
+	395 Compare X1, 0
+	396 JumpIfEqual {400}
+	397 Move X0, X24
+	398 Move X2, X31
+	399 Call MonoBehaviour.StopCoroutine, X0, X1
+	400 Move X0, X24
+	401 Call ContainerRemoveCarOperUIController.ResetRate30BlueSpeed, X0
+	402 Move X1, X0
+	403 Move X0, X24
+	404 Move X2, X31
+	405 Call MonoBehaviour.StartCoroutine, X0, X1
+	406 Move X1, X0
+	407 Move [X24+120], X0
+	408 Move X0, X25
+	409 Call 0xD6FE14
+	410 Move X0, X24
+	411 Call ContainerRemoveCarOperUIController.ClearRate30BlueSpeedBoost, X0
+	412 Move X0, [X26]
+	413 Move W8, [X0+224]
+	414 Compare W8, 0
+	415 JumpIfNotEqual {418}
+	416 Call 0xD6FF9C
+	417 Move X0, [X26]
+	418 Move X8, [X0+184]
+	419 Move S0, [X8+156]
+	420 Move S1, [X8+144]
+	421 Move W8, 0x7F800000
+	422 Move S2, W8
+	423 NotImplemented "Instruction FABS not yet implemented."
+	424 NotImplemented "Instruction SCVTF not yet implemented."
+	425 Move W8, [X0+224]
+	426 Compare W8, 0
+	427 JumpIfNotEqual {432}
+	428 Call 0xD6FF9C
+	429 Move X0, [X26]
+	430 Move X8, [X0+184]
+	431 Move W25, [X8+144]
+	432 NotImplemented "Instruction CMP not yet implemented."
+	433 Move X0, X24
+	434 Call ContainerRemoveCarOperUIController.ClearRate30BlueSpeedBoost, X0
+	435 Move W8, 70
+	436 Move [X24+140], W8
+	437 Move X0, [X26]
+	438 Move W8, [X0+224]
+	439 Compare W8, 0
+	440 JumpIfNotEqual {443}
+	441 Call 0xD6FF9C
+	442 Move X0, [X26]
+	443 Move X8, [X0+184]
+	444 Move W8, [X8+132]
+	445 Compare W8, 0
+	446 JumpIfEqual {449}
+	447 Move W8, 100
+	448 Move [X24+140], W8
+	449 Move X0, [X26]
+	450 Move W25, [X24+140]
+	451 Move W8, [X0+224]
+	452 Compare W8, 0
+	453 JumpIfNotEqual {456}
+	454 Call 0xD6FF9C
+	455 Move X0, [X26]
+	456 Move X8, [X0+184]
+	457 NotImplemented "Instruction SCVTF not yet implemented."
+	458 Move S0, [X8+156]
+	459 Move W8, 0x7F800000
+	460 Move S2, W8
+	461 NotImplemented "Instruction FABS not yet implemented."
+	462 Multiply S0, S0, S1
+	463 NotImplemented "Instruction FCVTZS not yet implemented."
+	464 NotImplemented "Instruction FCMP not yet implemented."
+	465 NotImplemented "Instruction CSEL not yet implemented."
+	466 Move [X22], W8
+	467 Move W8, [X0+224]
+	468 Compare W8, 0
+	469 JumpIfNotEqual {474}
+	470 Call 0xD6FF9C
+	471 Move X8, [X26]
+	472 Move X8, [X8+184]
+	473 Move W25, [X8+144]
+	474 Move X0, X24
+	475 Call ContainerRemoveCarOperUIController.ClearRate30BlueSpeedBoost, X0
+	476 NotImplemented "Instruction CMP not yet implemented."
+	477 Call 0xD700BC
+	478 Call 0xD700C4

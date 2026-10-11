@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-11",
+  "adapter": "24:B2:B9:EE:43:44",
+  "car_observed_address": "66:66:A1:B7:85:F9",
+  "request": {
+    "payload_hex": "04 06 00 00 00 9b dd e0 00 00 00 00 00 00 00 00 00 00 4d",
+    "machine_type": 4,
+    "opcode": 6,
+    "car_id_hex": "00 00 00",
+    "controller_id_hex": "9b dd e0",
+    "control_bytes_hex": "00 00 00 00 00 00 00 00 00 00",
+    "checksum_received": "4d",
+    "checksum_expected": "4d",
+    "checksum_valid": true,
+    "scope": "Layout observado em ContainerRemoveCarOperUIController; validar no carrinho."
+  },
+  "response": {
+    "payload_hex": "04 0a f9 85 b7 9b dd e0 00 00 00 00 00 00 00 00 00 00 8a",
+    "machine_type": 4,
+    "opcode": 10,
+    "car_id_hex": "f9 85 b7",
+    "controller_id_hex": "9b dd e0",
+    "control_bytes_hex": "00 00 00 00 00 00 00 00 00 00",
+    "checksum_received": "8a",
+    "checksum_expected": "8a",
+    "checksum_valid": true,
+    "scope": "Layout observado em ContainerRemoveCarOperUIController; validar no carrinho."
+  },
+  "bluez_advertisement_registered": true,
+  "matching_pair_response": true,
+  "probe_finished": true,
+  "movement_commands_sent": false,
+  "transport": "BLE non-connectable manufacturer-specific advertisements",
+  "limitations": "No driving test, GATT connection, firmware validation or power-cycle persistence test performed."
+}

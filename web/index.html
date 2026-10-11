@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="rccar-token" content="__TOKEN__"><title>RCCar · Controle de teste</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="/" aria-label="RCCar início"><span class="brand-icon">RC</span> RCCar <span class="badge">LAB</span></a><span class="local"><i></i> BLUETOOTH LOCAL</span></header>
+<main>
+<div id="demo" hidden>SIMULAÇÃO · Os comandos nesta página não acionam o carrinho.</div>
+<section class="intro"><div><p class="eyebrow">BANCADA DE TESTES / 01</p><h1>Assuma o controle.</h1><p class="subtitle">Conecte o carrinho. Segure uma direção. Solte para parar.</p></div><span class="protocol">BLE <span>↗</span></span></section>
+<section class="connection card" aria-label="Conexão"><div class="connection-text"><span id="status-dot" class="status-dot"></span><div><strong id="status">Desconectado</strong><p id="connection-hint">Ligue apenas o carrinho desejado, com a luz piscando, e feche o app no celular.</p></div></div><div class="connection-actions"><button id="disconnect" class="secondary" disabled>Desconectar</button><button id="connect" class="primary">Conectar carrinho <span>↗</span></button></div></section>
+<section id="car-picker" class="card car-picker" hidden><label for="car-choice">Carrinhos encontrados nesta busca</label><div><select id="car-choice"></select><button id="choose-car" class="primary">Usar este carrinho</button></div><p class="note">O ID identifica a unidade, sem informar seu modelo ou cor. Se não souber qual escolher, desconecte e repita com apenas um carrinho ligado. A seleção expira em 30 segundos.</p></section>
+<p id="error" role="alert" hidden></p>
+<div class="workspace">
+<section class="card drive"><div class="section-heading"><div><p class="eyebrow">01 / MOVIMENTO</p><h2>Direção</h2></div><span class="pill">Segure para mover</span></div>
+<div class="drive-content">
+<div class="dpad" aria-label="Controle direcional">
+<button class="direction diagonal" data-t="1" data-s="-1" aria-label="Frente e esquerda" disabled><b>↖</b></button><button class="direction" data-t="1" data-s="0" aria-label="Frente" disabled><b>↑</b><span>Frente</span></button><button class="direction diagonal" data-t="1" data-s="1" aria-label="Frente e direita" disabled><b>↗</b></button>
+<button class="direction" data-t="0" data-s="-1" aria-label="Esquerda" disabled><b>←</b><span>Esquerda</span></button><button id="stop-center" class="stop-center" aria-label="Parar carrinho" disabled><b>■</b><span>PARAR</span></button><button class="direction" data-t="0" data-s="1" aria-label="Direita" disabled><b>→</b><span>Direita</span></button>
+<button class="direction diagonal" data-t="-1" data-s="-1" aria-label="Ré e esquerda" disabled><b>↙</b></button><button class="direction" data-t="-1" data-s="0" aria-label="Ré" disabled><b>↓</b><span>Ré</span></button><button class="direction diagonal" data-t="-1" data-s="1" aria-label="Ré e direita" disabled><b>↘</b></button>
+</div>
+<div class="vehicle"><div class="road"><div class="road-line"></div><svg viewBox="0 0 120 230" role="img" aria-label="Carrinho visto de cima"><rect x="13" y="45" width="16" height="40" rx="5" fill="#242a28"/><rect x="91" y="45" width="16" height="40" rx="5" fill="#242a28"/><rect x="13" y="153" width="16" height="40" rx="5" fill="#242a28"/><rect x="91" y="153" width="16" height="40" rx="5" fill="#242a28"/><rect x="24" y="17" width="72" height="196" rx="27" fill="#c3ee63" stroke="#95b94a" stroke-width="2"/><path d="M34 67 Q60 48 86 67 L82 98 H38Z" fill="#273a33"/><rect x="38" y="107" width="44" height="45" rx="8" fill="#a6d64e"/><path d="M38 159 H82 L86 180 Q60 191 34 180Z" fill="#273a33"/><rect x="33" y="29" width="15" height="7" rx="3" fill="#f7ffdc"/><rect x="72" y="29" width="15" height="7" rx="3" fill="#f7ffdc"/><rect x="33" y="198" width="14" height="5" rx="2" fill="#f36f4e"/><rect x="73" y="198" width="14" height="5" rx="2" fill="#f36f4e"/></svg></div><strong id="motion-label">Em repouso</strong><span>Comando solicitado</span></div>
+</div><div class="keyboard"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> ou setas</span><span><kbd>Espaço</kbd> parar</span></div>
+<div class="speed"><div><label for="speed">Velocidade</label><strong><output id="speed-value">30</output><small> / 100</small></strong></div><input id="speed" type="range" min="0" max="100" value="30" step="5" disabled><div class="speed-scale"><span>0 · neutro</span><span>Escala do protocolo</span><span>100 · máximo</span></div></div>
+<button id="stop" class="stop-wide" disabled>■ &nbsp; PARAR AGORA <span>Espaço</span></button>
+</section>
+<aside>
+<section class="card functions"><div class="section-heading"><div><p class="eyebrow">02 / FUNÇÕES</p><h2>Luzes e som</h2></div><span class="pill amber">Experimental</span></div><p class="note">Campos recuperados do app. O efeito pode variar conforme o carrinho.</p><div class="toggles">
+<label class="toggle-row"><span><b>☼</b> Luz principal</span><input type="checkbox" id="lights" disabled></label>
+<label class="toggle-row"><span><b>◌</b> Luz auxiliar 1</span><input type="checkbox" id="led1" disabled></label>
+<label class="toggle-row"><span><b>◌</b> Luz auxiliar 2</span><input type="checkbox" id="led2" disabled></label>
+</div><button id="horn" class="secondary horn" disabled>♪ &nbsp; Buzina <span>Segure</span></button><button id="extra" class="secondary horn" disabled>✳ &nbsp; Função extra <span>Segure</span></button><p class="footnote">Função extra: efeito ainda não identificado.</p></section>
+<section class="card session"><p class="eyebrow">03 / SESSÃO</p><dl><div><dt>Carrinho</dt><dd id="car-id">—</dd></div><div><dt>Controlador</dt><dd id="controller-id">—</dd></div><div><dt>Transmissão</dt><dd>Anúncios BLE</dd></div></dl><p class="note small">“Pareado” confirma a troca inicial. Não há telemetria contínua de motor ou bateria.</p><details><summary>Ver pacote e eventos</summary><code id="packet">Nenhum pacote enviado.</code><ol id="events"></ol></details></section>
+</aside></div>
+<footer><span><i></i> Neutro automático se o comando expirar.</span><span>Primeiros testes com as rodas suspensas.</span></footer>
+</main></body></html>

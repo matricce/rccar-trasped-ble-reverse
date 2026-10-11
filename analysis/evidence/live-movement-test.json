@@ -1,0 +1,48 @@
+{
+  "events": [
+    {
+      "event": "advertisement_registered",
+      "direction": "neutral",
+      "duration_seconds": 1.0,
+      "payload": "04 07 f9 85 b7 9b dd e0 00 00 00 64 00 00 01 00 00 00 e2",
+      "monotonic": 8196.905563712
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "forward",
+      "duration_seconds": 0.6,
+      "payload": "04 07 f9 85 b7 9b dd e0 01 1e 01 64 00 00 02 00 00 00 ff",
+      "monotonic": 8197.910052606
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "neutral",
+      "duration_seconds": 2.0,
+      "payload": "04 07 f9 85 b7 9b dd e0 00 00 00 64 00 00 03 00 00 00 e0",
+      "monotonic": 8198.514850461
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "reverse",
+      "duration_seconds": 0.6,
+      "payload": "04 07 f9 85 b7 9b dd e0 02 1e 00 64 00 00 04 00 00 00 fb",
+      "monotonic": 8200.520764045
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "neutral",
+      "duration_seconds": 3.0,
+      "payload": "04 07 f9 85 b7 9b dd e0 00 00 00 64 00 00 05 00 00 00 e6",
+      "monotonic": 8201.124981391
+    },
+    {
+      "event": "final_neutral_sent",
+      "monotonic": 8204.128696786
+    }
+  ],
+  "car_id": "f9 85 b7",
+  "controller_id": "9b dd e0",
+  "physical_result": "User reported no wheel movement.",
+  "note": "Registration confirms BlueZ accepted the data; physical movement requires observation.",
+  "user_followup": "User pressed the car button; LEDs resumed blinking. User suspects it had been off; power state not independently verified."
+}

@@ -1,0 +1,21 @@
+{
+  "package": "com.DeliMiniChe.carapp",
+  "version": "202606301712",
+  "version_code": 38,
+  "source": "https://d.apkpure.net/b/XAPK/com.DeliMiniChe.carapp?version=latest",
+  "retrieved": "2026-10-11",
+  "files": {
+    "analysis/original/RCCar.xapk": {
+      "sha256": "80eda9496a7f08857ec79f31498fcb99292de74fd5bf1ceb8b7077ca23f3b76a",
+      "size": 489791168
+    },
+    "analysis/extracted/com.DeliMiniChe.carapp.apk": {
+      "sha256": "dac98b844de4e27b9797dfe293556899b8179f1b620770ab11a732b0b913c81e",
+      "size": 6470275
+    },
+    "analysis/extracted/arm64/lib/arm64-v8a/libil2cpp.so": {
+      "sha256": "130d91cb0be6fecc06ace4d57e516186357a4ed358ba234fc0c4e881002ede55",
+      "size": 35435856
+    }
+  }
+}

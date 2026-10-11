@@ -1,0 +1,10 @@
+analysis/original/
+analysis/extracted/
+analysis/jadx/
+analysis/cpp2il/
+analysis/isil/
+analysis/*.log
+analysis/metadata-strings.txt
+analysis/string-literals.json
+Plugins/
+__pycache__/

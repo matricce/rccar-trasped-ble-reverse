@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "event": "advertisement_registered",
+      "direction": "pair",
+      "duration_seconds": 1.5,
+      "payload": "04 06 00 00 00 91 43 14 00 00 00 00 00 00 00 00 00 00 2d",
+      "monotonic": 8327.753644394
+    },
+    {
+      "event": "car_response",
+      "payload": "04 0a f9 85 b7 91 43 14 00 00 00 00 00 00 00 00 00 00 ea",
+      "monotonic": 8328.350943312
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "neutral",
+      "duration_seconds": 1.0,
+      "payload": "04 07 f9 85 b7 91 43 14 00 00 00 64 00 00 01 00 00 00 82",
+      "monotonic": 8329.256472782
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "forward",
+      "duration_seconds": 0.6,
+      "payload": "04 07 f9 85 b7 91 43 14 01 1e 01 64 00 00 02 00 00 00 9f",
+      "monotonic": 8330.259280445
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "neutral",
+      "duration_seconds": 2.0,
+      "payload": "04 07 f9 85 b7 91 43 14 00 00 00 64 00 00 03 00 00 00 80",
+      "monotonic": 8330.861972484
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "reverse",
+      "duration_seconds": 0.6,
+      "payload": "04 07 f9 85 b7 91 43 14 02 1e 00 64 00 00 04 00 00 00 9b",
+      "monotonic": 8332.866057972
+    },
+    {
+      "event": "advertisement_registered",
+      "direction": "neutral",
+      "duration_seconds": 3.0,
+      "payload": "04 07 f9 85 b7 91 43 14 00 00 00 64 00 00 05 00 00 00 86",
+      "monotonic": 8333.469801319
+    },
+    {
+      "event": "final_neutral_sent",
+      "monotonic": 8336.470804664
+    }
+  ],
+  "car_id": "f9 85 b7",
+  "controller_id": "91 43 14",
+  "fresh_pairing_response": true,
+  "physical_result": "User confirmed: Sim, giraram e pararam",
+  "note": "Registration confirms BlueZ accepted the data; physical movement requires observation.",
+  "validated": "Fresh pairing, motor actuation during forward/reverse test sequence and stop observed by user. Individual physical direction and speed not separately measured."
+}
